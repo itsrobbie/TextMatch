@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="section" ng-app="textMatchApp" ng-controller="TextMatchController as tmCtrl">
+    <!--Text inputs-->
+    <div class="row">
+        <div class="col m6 input-field">
+            <textarea ng-model="tmCtrl.original" id="original-text" class="materialize-textarea"></textarea>
+            <label for="original-text">Original Text</label>
+        </div>
+        <div class="col m6 input-field">
+            <input ng-model="tmCtrl.subText" id="sub-text" type="text">
+            <label for="sub-text">Sub Text</label>
+        </div>
+    </div>
+    <!--Match button-->
+    <div class="row">
+        <a ng-click="tmCtrl.match(tmCtrl.original,tmCtrl.subText)" class="waves-effect centre waves-light btn">Match</a>
+    </div>
+    <!--Results-->
+    <div class="row">
+        <p>{{tmCtrl.result}}</p>
+    </div>
+</div>
+<br><br>
+
+@section Scripts{
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/matchController.js"></script>  
+}
+
