@@ -16,7 +16,7 @@ namespace TextMatch.Tests.Internals.Services.Matchers
         [TestCase("TestTESTtest", "Test", 3)]
         public void FindMatches_WithVariosInputs_ReturnsCorrectNumberOfResults(string text, string subtext, int matches)
         {
-            //assign 
+            //assign
             var matcher = this.matcherBuilder.Build();
 
             //act

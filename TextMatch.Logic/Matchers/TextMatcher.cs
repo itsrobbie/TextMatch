@@ -1,26 +1,8 @@
 ﻿using System.Collections.Generic;
+using TextMatch.Domain.Interfaces.Services.Matchers;
 
 namespace TextMatch.Internals.Services.Matchers
 {
-    public interface ITextMatcher
-    {
-        /// <summary>
-        /// An implementation of the famous kmp search algorithm. 
-        /// It searches for the number of occurences of <code>subtext</code> in <code>text</code>, 
-        /// and returns these possitions in an integer array. 
-        /// 
-        /// Logic:
-        /// If either parameters are empty, an empty array is returned.
-        /// The indexes returned are base 1, not 0 based
-        /// The search algorithm is not case sensitive
-        /// 
-        /// </summary>
-        /// <param name="text">The whole text to search through.</param>
-        /// <param name="subtext">The sub text to search for, inside <code>text</code></param>
-        /// <returns>An integer array, containing all possitions of <code>subtext</code> in <code>text</code>.</returns>
-        int[] FindMatches(string text, string subtext);
-    }
-
     public class TextMatcher : ITextMatcher
     {
         private int _currentIndexText = 0;
@@ -95,17 +77,16 @@ namespace TextMatch.Internals.Services.Matchers
             return index < text.Length;
         }
 
-        public TextMatcher WithText(string text)
+        public ITextMatcher WithText(string text)
         {
             this._text = text;
             return this;
         }
 
-        public TextMatcher WithSubText(string subText)
+        public ITextMatcher WithSubText(string subText)
         {
             this._subtext = subText;
             return this;
         }
-
     }
 }

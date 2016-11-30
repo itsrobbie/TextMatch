@@ -43,6 +43,12 @@
     <Compile Include="Matchers\TextMatcher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TextMatch.Domain.Interfaces\TextMatch.Domain.Interfaces.csproj">
+      <Project>{57530FEC-C009-4F29-B2C6-D18250A2820B}</Project>
+      <Name>TextMatch.Domain.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
