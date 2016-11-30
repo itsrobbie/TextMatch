@@ -41,5 +41,20 @@ namespace TextMatch.Logic.Tests
             Assert.AreEqual(6, result[1]);
             Assert.AreEqual(11, result[2]);
         }
+
+        [TestCase]
+        public void BuilderMethods_UsingFluidBuilder_ReturnsCorrectMatches()
+        {
+            //assign 
+            var matcher = this.matcherBuilder.WithFourSequencesInTheText().Build();
+
+            //act
+            var result = matcher.FindMatches("Test TEST test", "test");
+
+            //assert
+            Assert.AreEqual(1, result[0]);
+            Assert.AreEqual(6, result[1]);
+            Assert.AreEqual(11, result[2]);
+        }
     }
 }

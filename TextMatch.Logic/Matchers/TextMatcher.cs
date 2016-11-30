@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace TextMatch.Logic.Matchers
 {
@@ -31,8 +32,10 @@ namespace TextMatch.Logic.Matchers
 
         private List<int> _matches = new List<int>();
 
-        public int[] FindMatches(string text, string subtext)
+        public int[] FindMatches(string text = null, string subtext = null)
         {
+            this.WithText(text).WithSubText(subtext);
+
             if (string.IsNullOrEmpty(text) || string.IsNullOrEmpty(subtext)) { return new int[] { }; }
 
             _matches = new List<int>();
@@ -92,5 +95,18 @@ namespace TextMatch.Logic.Matchers
         {
             return index < text.Length;
         }
+
+        public TextMatcher WithText(string text)
+        {
+            this._text = text;
+            return this;
+        }
+
+        public TextMatcher WithSubText(string subText)
+        {
+            this._subtext = subText;
+            return this;
+        }
+
     }
 }
