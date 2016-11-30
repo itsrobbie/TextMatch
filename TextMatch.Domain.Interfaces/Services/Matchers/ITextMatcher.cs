@@ -1,4 +1,6 @@
-﻿namespace TextMatch.Domain.Interfaces.Services.Matchers
+﻿using System.Collections.Generic;
+
+namespace TextMatch.Domain.Interfaces.Services.Matchers
 {
     public interface ITextMatcher
     {
@@ -16,7 +18,7 @@
         /// <param name="text">The whole text to search through.</param>
         /// <param name="subtext">The sub text to search for, inside <code>text</code></param>
         /// <returns>An integer array, containing all possitions of <code>subtext</code> in <code>text</code>.</returns>
-        int[] FindMatches(string text = null, string subtext = null);
+        IEnumerable<int> FindMatches(string text = null, string subtext = null);
 
         /// <summary>
         /// Sets the value of the text to search though.

@@ -171,6 +171,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TextMatch.Domain.Interfaces\TextMatch.Domain.Interfaces.csproj">
+      <Project>{57530FEC-C009-4F29-B2C6-D18250A2820B}</Project>
+      <Name>TextMatch.Domain.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TextMatch.Logic\TextMatch.Internals.Services.csproj">
       <Project>{4db936f7-dac6-4723-bb80-a08efdab263d}</Project>
       <Name>TextMatch.Internals.Services</Name>

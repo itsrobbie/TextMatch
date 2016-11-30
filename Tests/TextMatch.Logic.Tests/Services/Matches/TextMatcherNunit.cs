@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using TextMatch.Tests.Internals.Builders;
+using System.Linq;
 
 namespace TextMatch.Tests.Internals.Services.Matchers
 {
@@ -20,7 +21,7 @@ namespace TextMatch.Tests.Internals.Services.Matchers
             var matcher = this.matcherBuilder.Build();
 
             //act
-            var result = matcher.FindMatches(text, subtext);
+            var result = matcher.FindMatches(text, subtext).ToArray();
 
             //assert
             Assert.AreEqual(matches, result.Length);
@@ -33,7 +34,7 @@ namespace TextMatch.Tests.Internals.Services.Matchers
             var matcher = this.matcherBuilder.Build();
 
             //act
-            var result = matcher.FindMatches("Test TEST test", "test");
+            var result = matcher.FindMatches("Test TEST test", "test").ToArray();
 
             //assert
             Assert.AreEqual(1, result[0]);
@@ -48,7 +49,7 @@ namespace TextMatch.Tests.Internals.Services.Matchers
             var matcher = this.matcherBuilder.WithFourSequencesInTheText().Build();
 
             //act
-            var result = matcher.FindMatches("Test TEST test", "test");
+            var result = matcher.FindMatches("Test TEST test", "test").ToArray();
 
             //assert
             Assert.AreEqual(1, result[0]);

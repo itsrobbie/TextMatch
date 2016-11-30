@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
-using TextMatch.Internals.Services.Matchers;
+using TextMatch.Domain.Interfaces.Services.Matchers;
 
 namespace TextMatch.Hci.Mvc.Controllers
 {

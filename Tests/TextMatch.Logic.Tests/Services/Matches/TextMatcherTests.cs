@@ -1,5 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TextMatch.Domain.Interfaces.Services.Matchers;
 using TextMatch.Internals.Services.Matchers;
+using System.Linq;
 
 namespace TextMatch.Tests.Internals.Services.Matches
 {
@@ -28,7 +30,7 @@ namespace TextMatch.Tests.Internals.Services.Matches
             //assign
 
             //act
-            var result = _textMatcher.FindMatches(string.Empty, "Test");
+            var result = _textMatcher.FindMatches(string.Empty, "Test").ToArray();
 
             //asert
             Assert.AreEqual(0, result.Length);
@@ -41,7 +43,7 @@ namespace TextMatch.Tests.Internals.Services.Matches
             //assign
 
             //act
-            var result = _textMatcher.FindMatches("Test", string.Empty);
+            var result = _textMatcher.FindMatches("Test", string.Empty).ToArray();
 
             //asert
             Assert.AreEqual(0, result.Length);
@@ -53,7 +55,7 @@ namespace TextMatch.Tests.Internals.Services.Matches
             //assign
 
             //act
-            var result = _textMatcher.FindMatches("Test", "Fail");
+            var result = _textMatcher.FindMatches("Test", "Fail").ToArray();
 
             //asert
             Assert.AreEqual(0, result.Length);
@@ -66,7 +68,7 @@ namespace TextMatch.Tests.Internals.Services.Matches
             var text = "Test";
 
             //act
-            var result = _textMatcher.FindMatches(text, text);
+            var result = _textMatcher.FindMatches(text, text).ToArray();
 
             //asert
             Assert.AreEqual(1, result.Length);
@@ -81,7 +83,7 @@ namespace TextMatch.Tests.Internals.Services.Matches
             var text = string.Join(string.Empty, subtext, subtext, subtext);
 
             //act
-            var result = _textMatcher.FindMatches(text, subtext);
+            var result = _textMatcher.FindMatches(text, subtext).ToArray();
 
             //asert
             Assert.AreEqual(3, result.Length);
@@ -98,7 +100,7 @@ namespace TextMatch.Tests.Internals.Services.Matches
             var text = string.Join(string.Empty, subtext.ToUpper(), subtext, subtext.ToLower());
 
             //act
-            var result = _textMatcher.FindMatches(text, subtext);
+            var result = _textMatcher.FindMatches(text, subtext).ToArray();
 
             //asert
             Assert.AreEqual(3, result.Length);
@@ -119,10 +121,10 @@ namespace TextMatch.Tests.Internals.Services.Matches
             var subtext = "Polly";
 
             //act
-            var result = _textMatcher.FindMatches(testString, subtext);
+            var result = _textMatcher.FindMatches(testString, subtext).ToList();
 
             //assert
-            Assert.AreEqual(3, result.Length);
+            Assert.AreEqual(3, result.Count);
             Assert.AreEqual(1, result[0]);
             Assert.AreEqual(26, result[1]);
             Assert.AreEqual(51, result[2]);
@@ -135,10 +137,10 @@ namespace TextMatch.Tests.Internals.Services.Matches
             var subtext = "ll";
 
             //act
-            var result = _textMatcher.FindMatches(testString, subtext);
+            var result = _textMatcher.FindMatches(testString, subtext).ToList();
 
             //assert
-            Assert.AreEqual(5, result.Length);
+            Assert.AreEqual(5, result.Count);
             Assert.AreEqual(3, result[0]);
             Assert.AreEqual(28, result[1]);
             Assert.AreEqual(53, result[2]);
@@ -153,10 +155,10 @@ namespace TextMatch.Tests.Internals.Services.Matches
             var subtext = "X";
 
             //act
-            var result = _textMatcher.FindMatches(testString, subtext);
+            var result = _textMatcher.FindMatches(testString, subtext).ToList();
 
             //assert
-            Assert.AreEqual(0, result.Length);
+            Assert.AreEqual(0, result.Count);
         }
 
         [TestMethod]
@@ -166,10 +168,10 @@ namespace TextMatch.Tests.Internals.Services.Matches
             var subtext = "Polx";
 
             //act
-            var result = _textMatcher.FindMatches(testString, subtext);
+            var result = _textMatcher.FindMatches(testString, subtext).ToList();
 
             //assert
-            Assert.AreEqual(0, result.Length);
+            Assert.AreEqual(0, result.Count);
         }
 
         #endregion

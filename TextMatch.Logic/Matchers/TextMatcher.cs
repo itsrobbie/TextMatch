@@ -13,22 +13,23 @@ namespace TextMatch.Internals.Services.Matchers
 
         private List<int> _matches = new List<int>();
 
-        public int[] FindMatches(string text = null, string subtext = null)
+        public IEnumerable<int> FindMatches(string text = null, string subtext = null)
         {
-            this.WithText(text).WithSubText(subtext);
+            this.WithMatches(new List<int>()).WithText(text).WithSubText(subtext);
 
-            if (string.IsNullOrEmpty(text) || string.IsNullOrEmpty(subtext)) { return new int[] { }; }
-
-            _matches = new List<int>();
-            _text = text.ToLower();
-            _subtext = subtext.ToLower();
+            if (this.StringsAreValid()) { return new int[] { }; }
 
             while (IsIndexLessThanLengthOfText(_currentIndexText + _currentIndexSubtext, _text))
             {
                 CompareCharacters(_subtext[_currentIndexSubtext], _text[_currentIndexText + _currentIndexSubtext]);
             }
 
-            return _matches.ToArray();
+            return _matches;
+        }
+
+        private bool StringsAreValid()
+        {
+            return string.IsNullOrEmpty(this._text) || string.IsNullOrEmpty(this._subtext);
         }
 
         /// <summary>
@@ -79,13 +80,19 @@ namespace TextMatch.Internals.Services.Matchers
 
         public ITextMatcher WithText(string text)
         {
-            this._text = text;
+            this._text = text.ToLower();
             return this;
         }
 
         public ITextMatcher WithSubText(string subText)
         {
-            this._subtext = subText;
+            this._subtext = subText.ToLower();
+            return this;
+        }
+
+        private ITextMatcher WithMatches(List<int> matches)
+        {
+            this._matches = matches;
             return this;
         }
     }

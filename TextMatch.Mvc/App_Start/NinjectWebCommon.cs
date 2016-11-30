@@ -13,6 +13,7 @@ namespace TextMatch.Hci.Mvc.App_Start
     using Internals.Services.Matchers;
     using System.Web.Http;
     using Ninject.Web.WebApi;
+    using TextMatch.Domain.Interfaces.Services.Matchers;
 
     public static class NinjectWebCommon 
     {
