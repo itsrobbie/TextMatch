@@ -1,7 +1,7 @@
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(TextMatch.Mvc.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(TextMatch.Mvc.App_Start.NinjectWebCommon), "Stop")]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(TextMatch.Hci.Mvc.App_Start.NinjectWebCommon), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(TextMatch.Hci.Mvc.App_Start.NinjectWebCommon), "Stop")]
 
-namespace TextMatch.Mvc.App_Start
+namespace TextMatch.Hci.Mvc.App_Start
 {
     using System;
     using System.Web;
@@ -10,7 +10,7 @@ namespace TextMatch.Mvc.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
-    using Logic.Matchers;
+    using Internals.Services.Matchers;
     using System.Web.Http;
     using Ninject.Web.WebApi;
 

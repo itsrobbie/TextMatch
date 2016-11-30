@@ -1,7 +1,7 @@
 ﻿using System;
-using TextMatch.Logic.Matchers;
+using TextMatch.Internals.Services.Matchers;
 
-namespace TextMatch.Logic.Tests.Builders
+namespace TextMatch.Tests.Internals.Builders
 {
     class TextMatcherBuilder
     {

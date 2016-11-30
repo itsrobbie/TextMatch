@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
-using TextMatch.Logic.Matchers;
+using TextMatch.Internals.Services.Matchers;
 
-namespace TextMatch.Mvc.Controllers
+namespace TextMatch.Hci.Mvc.Controllers
 {
     public class TextMatchController : ApiController
     {

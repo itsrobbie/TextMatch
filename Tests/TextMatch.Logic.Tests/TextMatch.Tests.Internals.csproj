@@ -71,14 +71,14 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Builders\TextMatcherBuilder.cs" />
-    <Compile Include="TextMatcherNunit.cs" />
-    <Compile Include="TextMatcherTests.cs" />
+    <Compile Include="Services\Matches\TextMatcherNunit.cs" />
+    <Compile Include="Services\Matches\TextMatcherTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\TextMatch.Logic\TextMatch.Logic.csproj">
+    <ProjectReference Include="..\..\TextMatch.Logic\TextMatch.Internals.Services.csproj">
       <Project>{4db936f7-dac6-4723-bb80-a08efdab263d}</Project>
-      <Name>TextMatch.Logic</Name>
+      <Name>TextMatch.Internals.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

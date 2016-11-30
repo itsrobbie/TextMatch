@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace TextMatch.Mvc.Controllers
+namespace TextMatch.Hci.Mvc.Controllers
 {
     public class HomeController : Controller
     {

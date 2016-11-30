@@ -1,15 +1,27 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextMatch.Mvc", "TextMatch.Mvc\TextMatch.Mvc.csproj", "{93F41E55-8B17-4327-AA3D-18D51B3D026F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{63C26C23-B878-49CE-99B9-521BC3893A97}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.Tests", "5.Tests", "{63C26C23-B878-49CE-99B9-521BC3893A97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextMatch.Logic.Tests", "Tests\TextMatch.Logic.Tests\TextMatch.Logic.Tests.csproj", "{FE4CD037-7A7E-4C12-A8A3-D586993FC690}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextMatch.Tests.Internals", "Tests\TextMatch.Logic.Tests\TextMatch.Tests.Internals.csproj", "{FE4CD037-7A7E-4C12-A8A3-D586993FC690}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextMatch.Logic", "TextMatch.Logic\TextMatch.Logic.csproj", "{4DB936F7-DAC6-4723-BB80-A08EFDAB263D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextMatch.Internals.Services", "TextMatch.Logic\TextMatch.Internals.Services.csproj", "{4DB936F7-DAC6-4723-BB80-A08EFDAB263D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Domain", "2.Domain", "{CE4AFAC9-ACEE-4576-9DB2-4593481D1A73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextMatch.Domain.Interfaces", "TextMatch.Domain.Interfaces\TextMatch.Domain.Interfaces.csproj", "{57530FEC-C009-4F29-B2C6-D18250A2820B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.SolutionItems", "0.SolutionItems", "{FF40C82C-1149-46CA-8DCA-7981CC3F7241}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.HCI", "1.HCI", "{82206873-21ED-4E64-9A14-7305B72D65B0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Externals", "3.Externals", "{3D3630C9-37C0-40E7-B75F-2FBBB1BA97AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.Internals", "4.Internals", "{4D471C4A-5126-4054-95C1-B07FC3A2D064}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,11 +41,18 @@ Global
 		{4DB936F7-DAC6-4723-BB80-A08EFDAB263D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DB936F7-DAC6-4723-BB80-A08EFDAB263D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DB936F7-DAC6-4723-BB80-A08EFDAB263D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57530FEC-C009-4F29-B2C6-D18250A2820B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57530FEC-C009-4F29-B2C6-D18250A2820B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57530FEC-C009-4F29-B2C6-D18250A2820B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57530FEC-C009-4F29-B2C6-D18250A2820B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{93F41E55-8B17-4327-AA3D-18D51B3D026F} = {82206873-21ED-4E64-9A14-7305B72D65B0}
 		{FE4CD037-7A7E-4C12-A8A3-D586993FC690} = {63C26C23-B878-49CE-99B9-521BC3893A97}
+		{4DB936F7-DAC6-4723-BB80-A08EFDAB263D} = {4D471C4A-5126-4054-95C1-B07FC3A2D064}
+		{57530FEC-C009-4F29-B2C6-D18250A2820B} = {CE4AFAC9-ACEE-4576-9DB2-4593481D1A73}
 	EndGlobalSection
 EndGlobal

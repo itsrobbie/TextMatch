@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace TextMatch.Logic.Matchers
+namespace TextMatch.Internals.Services.Matchers
 {
     public interface ITextMatcher
     {

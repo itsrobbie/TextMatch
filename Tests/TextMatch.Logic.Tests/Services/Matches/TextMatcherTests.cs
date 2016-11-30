@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TextMatch.Logic.Matchers;
+using TextMatch.Internals.Services.Matchers;
 
-namespace TextMatch.Logic.Tests
+namespace TextMatch.Tests.Internals.Services.Matches
 {
     /*
         Used with TDD to create my matching algorithm.

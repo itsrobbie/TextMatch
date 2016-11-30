@@ -1,8 +1,7 @@
 ﻿using NUnit.Framework;
-using TextMatch.Logic.Matchers;
-using TextMatch.Logic.Tests.Builders;
+using TextMatch.Tests.Internals.Builders;
 
-namespace TextMatch.Logic.Tests
+namespace TextMatch.Tests.Internals.Services.Matchers
 {
     [TestFixture]
     public class TextMatcherNunit
